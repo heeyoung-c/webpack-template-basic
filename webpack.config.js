@@ -21,6 +21,7 @@ module.exports = {
       {
         test: /\.s?css$/,
         use: [
+          // 순서 중요!
           'style-loader',
           'css-loader',
           'postcss-loader',
@@ -29,6 +30,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/, // 제외할 경로
         use: [
           'babel-loader'
         ]
